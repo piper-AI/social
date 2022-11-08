@@ -1,25 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<title>searching the [thedirectory]
+<!DOCTYPE html>
+<html>
+  <title>thedirectory</title>
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>seARch!</title>
-<link rel='icon' href='Mainicon.png' type='png'/ >
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script>
-$( document ).ready(function() {
-  $('#search').keyup(function(){
-   var valThis = $(this).val().toLowerCase();
-    $('.famousCities>li').each(function(){
-     var text = $(this).text().toLowerCase();
-        (text.indexOf(valThis) == 0) ? $(this).show() : $(this).hide();            
-   });
-  });
-});
-</script>
-</head>
 <style>
 .footer {
    position: fixed;
@@ -92,6 +74,7 @@ li a:hover:not(.active) {
   background-color: #FFD73B;
 }
   </style>
+</head>
 <body>
 
 <ul>
@@ -105,17 +88,81 @@ li a:hover:not(.active) {
   <a href="adamr.html">Adam R</a>
 </div>
 </body>
+  <style>
+* {
+  box-sizing: border-box;
+}
 
-<div style="width: 250px;">
-<input placeholder="seARch!..." id="search" type="text" />
-<br />
- 
-<class="famousCities">
-     <li><a href="kevins.html>Kevin S</a></li> 
-     <li><a href="adamr.html">Adam R</a></li> 
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+
+<h2>My Phonebook</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<b id="myUL">
+  <li><a href="#">Adele</a></li>
+  <li><a href="#">Agnes</a></li>
+
+  <li><a href="#">Billy</a></li>
+  <li><a href="#">Bob</a></li>
+
+  <li><a href="#">Calvin</a></li>
+  <li><a href="#">Christina</a></li>
+  <li><a href="#">Cindy</a></li>
 </ul>
-</div>
-<div class="footer">
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+    <div class="footer">
     </li></ul></h3>
 <b> ~2 
 </b> people on
@@ -123,9 +170,6 @@ li a:hover:not(.active) {
 [ <a href="index.html"><i>Home</i></a> | 
 <a href="search.html">Search</a> | 
 <a href="register.html">register</a> ] </br>
-</i><hr><i><i>Last modified: 8 Nov 2022, 06:24:55 PM</i><br>2022 arashid20@dgsb
+</i><hr><i><i>Last modified: 8 Nov 2022, 06:24:55 PM</i><br>2022 ksaji20@dgsb
 </i></div>
     </html>
-
-</body>
-</html>
